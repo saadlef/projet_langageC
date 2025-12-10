@@ -1,0 +1,54 @@
+Vérification de la syntaxe pour coord.h :
+gcc -std=c99 -c -Wall -Wextra -pedantic -Werror -fsyntax-only -x c coord.h
+Vérification de la syntaxe pour coord.c :
+gcc -std=c99 -c -Wall -Wextra -pedantic -Werror -fsyntax-only -x c coord.c
+
+[le header coord.h est correctement gardé]
+==code
+
+==endcode
+
+[Définition de coord_t]
+==code
+coord_t c; (void) c;
+==endcode
+
+[Définition de creer_coord]
+==code
+coord_t c = creer_coord((int) 0, (int) 0); (void) c;
+==endcode
+
+[Définition de get_x]
+==code
+coord_t c = creer_coord(0, 0); int x = get_x(c); (void) x;
+==endcode
+
+[Définition de get_y]
+==code
+coord_t c = creer_coord(0, 0); int y = get_y(c); (void) y;
+==endcode
+
+[Définition de set_x]
+==code
+coord_t c = creer_coord(0, 0); set_x(&c, (int) 1);
+==endcode
+
+[Définition de set_y]
+==code
+coord_t c = creer_coord(0, 0); set_y(&c, (int) 1);
+==endcode
+
+[Définition de memes_coord]
+==code
+coord_t c = creer_coord(0,0); bool r = memes_coord(c, c); (void) r;
+==endcode
+
+[Définition de translation]
+==code
+coord_t c = creer_coord(0,0); c = translation(c, (int) 1, (int) 2); (void) c;
+==endcode
+
+[Définition de distance_euclidienne]
+==code
+coord_t c = creer_coord(0,0); float r = distance_euclidienne(c, c); (void) r;
+==endcode
